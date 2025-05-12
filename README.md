@@ -126,3 +126,63 @@ Small and medium-sized service providers like salons, clinics, and freelancers s
 - Service ratings and testimonials
 - Multi-language support
 - Custom domain per tenant
+
+---
+
+# 🌲 Tree Timeline Flow Diagram
+
+## 📌 Legend
+
+| Symbol | Meaning                           |
+| ------ | --------------------------------- |
+| 🟢     | Start Node                        |
+| 🔴     | Critical Path                     |
+| 🟡     | Blocked Task (depends on another) |
+| ⚪     | Parallel / Independent Task       |
+
+---
+
+## 🔄 Project Timeline Diagram (Horizontal Tree Flow)
+
+```
+🟢 Project Setup                                                                                                                                🟢 React Native App Init
+     |                                                                                                                                                     |
+     v                                                                                                                                                     |
+🔴 Multi-Tenancy Setup
+     |                                                                                                                                                     |
+     v                                                                                                                                                     |
+🔴 Authentication System
+     |                                                                                                                                                     |
+     +-------------------------------------------+---------------------------------+------------------------------+                                        |
+     |                                           |                                 |                              |                                        |
+     v                                           v                                 v                              v                                        |
+🔴 Booking Core Logic                     ⚪ Admin Panel               ⚪ Tenant Onboarding UI           ⚪ Multi-language                               |
+     |                                                                                                                                                     |
+     +----------------------------------------------------+------------------------------------------------+-----------------------------------------------+
+     |                                                    |                                                |                                               |
+     v                                                    v                                                v                                               v
+🔴 Payments & Notifications           🟡 PDF Invoicing Module (post-Booking Core)     🟡 Service Ratings (post-booking flow)     🟡 Provider Booking App (blocked by Booking Core)
+     |                                                    |                                                |                                               |
+     +-----------------------------------------------------------------------------------------------------------------------------------------------------+
+     |                                                    |                                                |                                               |
+     |                                                    |                                                |                                               v
+     |                                                    |                                                |                                    🟡 Mobile Notifications
+     |                                                    |                                                |                                               |
+     |                                                    v                                                v                                               v
+     +----------------------------------------------------+------------------------------------------------+-----------------------------------------------+
+     |
+     v
+🔴 Testing & Deployment
+     |
+     v
+🔴 Buffer & Polish Phase
+```
+
+---
+
+## 📋 Tips
+
+- Treat the **critical path** as non-negotiable deadlines.
+- Assign a separate team (or async sprint) for ⚪ features to avoid bottlenecks.
+- Visual tools like this help in retrospectives and sprint planning.
+
